@@ -1,19 +1,19 @@
 import {
-  Component,
-  OnInit,
-  Input,
-  ViewEncapsulation,
-  OnChanges,
-  SimpleChanges,
-  DoCheck,
-  AfterContentInit,
   AfterContentChecked,
-  AfterViewInit,
+  AfterContentInit,
   AfterViewChecked,
-  OnDestroy,
-  ViewChild,
+  AfterViewInit,
+  Component,
+  ContentChild,
+  DoCheck,
   ElementRef,
-  ContentChild
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+  ViewChild,
+  ViewEncapsulation
 } from '@angular/core';
 
 @Component({
@@ -23,8 +23,7 @@ import {
   encapsulation: ViewEncapsulation.Emulated //default
 })
 export class ServerElementComponent
-  implements
-    OnInit,
+  implements OnInit,
     OnChanges,
     DoCheck,
     AfterContentInit,
@@ -34,8 +33,8 @@ export class ServerElementComponent
     OnDestroy {
   @Input('srvElement') element: { type: string; name: string; content: string };
   @Input() name: string;
-  @ViewChild('heading', { static: true }) header: ElementRef;
-  @ContentChild('contentParagraph', { static: true }) paragraph: ElementRef;
+  @ViewChild('heading', {static: true}) header: ElementRef;
+  @ContentChild('contentParagraph', {static: true}) paragraph: ElementRef;
 
   constructor() {
     console.log('constructor called!');
