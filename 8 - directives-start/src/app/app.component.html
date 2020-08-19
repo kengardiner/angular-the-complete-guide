@@ -14,7 +14,7 @@
             [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent'}"
             *ngFor=" let odd of oddNumbers
           ">
-          {{ odd }}
+            {{ odd }}
           </li>
         </div>
         <div *ngIf="!onlyOdd">
@@ -27,7 +27,10 @@
         </div>
       </ul>
       <p appBasicHighlight>Style me with basic directive.</p>
-      <p appBetterHighlight>Style me with a better directive.</p>
+      <p appBetterHighlight
+         [defaultColor]="'yellow'"
+         [appBetterHighlight]="'red'"
+      >Style me with a better directive.</p>
     </div>
   </div>
 </div>
